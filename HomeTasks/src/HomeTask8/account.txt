@@ -1,0 +1,91 @@
+Параметр T в угловых скобках называется универсальным параметром, так как вместо него можно подставить любой тип.
+
+Pнак вопроса (?), называемый подстановочным символом, означает  неизвестный тип. Подстановочный символ может использоваться в разных ситуациях: как параметр типа, поля, локальной переменной, иногда в качестве возвращаемого типа. Подстановочный символ никогда не используется в качестве аргумента типа для вызова обобщённого метода, создания экземпляра обобщённого класса или супертипа.
+
+Параметризованные методы. Пример:
+
+public static <T> void filter(Collection<T> in, Collection<T> out)
+{
+    boolean flag = true;
+    for(T obj : in)
+    {
+        if(flag)
+        {
+            out.add(obj);
+        }
+        flag = !flag;
+    }
+}
+
+Метод filter() копирует чередующиеся элементы из коллекции in в коллекцию out. <T> перед void показывает, что метод является обобщенным методом с <T>, означающим параметризованный тип. Применение данного обобщенного метода:
+
+ArrayList<Integer> lst1 = new ArrayList<Integer>();
+lst1.add(1);
+lst1.add(2);
+lst1.add(3);
+
+ArrayList<Integer> lst2 = new ArrayList<Integer>();
+filter(lst1, lst2);
+System.out.println(lst2.size());
+
+ArrayList lst1 заполняется тремя значениями, а затем его содержимое фильтруется (копируется) в другой ArrayList lst2. Размер lst2 после вызова метода filter() равен 2. Другой вызов:
+
+ArrayList<Double> dblLst = new ArrayList<Double>();
+filter(lst1, dblLst);
+
+Здесь получаем ошибку компиляции:
+
+Error:  
+line (34) <T>filter(java.util.Collection<T>,java.util.Collection<T>) 
+in com.agiledeveloper.Test cannot be applied to
+(java.util.ArrayList<java.lang.Integer>,
+java.util.ArrayList<java.lang.Double>)
+
+Ошибка говорит, что невозможно отправить ArrayList разных типов этому методу.
+
+---------------------------------------------------------------------------------------
+
+Пример:
+
+public abstract class Animal
+{
+    public void playWith(Collection<Animal> playGroup)
+    {
+
+    }
+}
+
+public class Dog extends Animal
+{
+    public void playWith(Collection<Animal> playGroup)
+    {
+    }
+}
+
+Класс Animal имеет метод playWith(), принимающий коллекцию Animal. Dog(собака), расширяющая Animal, переопределяет этот метод. Используем класс Dog в примере:
+
+Collection<Dog> dogs = new ArrayList<Dog>();
+        
+Dog aDog = new Dog();
+aDog.playWith(dogs); //ошибка
+
+Здесь создается экземпляр Dog и отправляется коллекция Dog его методу playWith(). Выдается ошибка компиляции:
+
+Error:  line (29) cannot find symbol 
+method playWith(java.util.Collection<com.agiledeveloper.Dog>)
+
+Причина состоит в том, что коллекцию Dog нельзя рассматривать как коллекцию Animal, которую ожидает метод playWith(). Поэтому используем подстановочный знак.
+
+Оба метода playMethod()(в Animal и Dog) изменяются следующим образом:
+
+public void playWith(Collection<?> playGroup)
+
+Collection не имеет тип Animal. Вместо этого она имеет неизвестный тип (?). 
+
+Код
+aDog.playWith(dogs);
+
+компилируется без ошибок. Можно написать:
+
+ArrayList<Integer> numbers = new ArrayList<Integer>();
+aDog.playWith(numbers);
