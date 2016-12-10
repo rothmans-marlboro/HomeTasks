@@ -1,0 +1,203 @@
+1. An example of method overloading
+Suppose we have a program in which there are 2 methods with the same name but with different types and number of parameters. Depending on the type and number of parameters passed the system will choose the method that is suitable for the types and asked a number of parameters. The program is as follows:
+
+public class net {
+	public static void main(String[] args) {
+		int numberOne = Sum(20, 10);
+		System.out.println(numberOne);
+		double numberTwo = Sum(20.3, 30.4, 9.8);
+		System.out.println(numberTwo);
+	}
+
+	static int Sum(int x, int y) {
+		return x + y;
+	}
+
+	static double Sum(double x, double y, double z) {
+		return x + y + z;
+	}
+}
+
+30
+60.5 (The result is output to the console)
+----------------------------------------------------------
+If we replace the access modifier for the second method to the "private", it displays an error message on the console
+
+public class net {
+	public static void main(String[] args) {
+		int numberOne = Sum(20, 10);
+		System.out.println(numberOne);
+		double numberTwo = Sum(20.3, 30.4, 9.8);
+		System.out.println(numberTwo);
+	}
+
+	static int Sum(int x, int y) {
+		return x + y;
+	}
+
+	private double Sum(double x, double y, double z) {
+		return x + y + z;
+	}
+}
+
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	Cannot make a static reference to the non-static method Sum(double, double, double) from the type net
+
+	at home.net.main(net.java:7)
+
+---------------------------------------------------------
+
+If the first method will replace the return type to void, the system will ask to return the type "int" and will display an error message.
+
+public class net {
+	public static void main(String[] args) {
+		int numberOne = Sum(20, 10);
+		System.out.println(numberOne);
+		double numberTwo = Sum(20.3, 30.4, 9.8);
+		System.out.println(numberTwo);
+	}
+
+	static void Sum(int x, int y) {
+		return x + y;
+	}
+
+	static double Sum(double x, double y, double z) {
+		return x + y + z;
+	}
+}
+
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	Type mismatch: cannot convert from void to int
+
+	at home.net.main(net.java:5)
+
+---------------------------------------------------------
+
+If the first method its name, it will be an error message will be changed to replace.
+
+public class net {
+	public static void main(String[] args) {
+		int numberOne = Sum(20, 10);
+		System.out.println(numberOne);
+		double numberTwo = Sum(20.3, 30.4, 9.8);
+		System.out.println(numberTwo);
+	}
+
+	static int Sum1(int x, int y) {
+		return x + y;
+	}
+
+	static double Sum(double x, double y, double z) {
+		return x + y + z;
+	}
+}
+
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	The method Sum(double, double, double) in the type net is not applicable for the arguments (int, int)
+
+	at home.net.main(net.java:5)
+
+---------------------------------------------------------
+
+2. Example of overriding methods
+
+		 
+public class net {
+	public static void main(String[] args) {
+		net myText = new ChildClass();
+		myText.doSomething("have redefine");
+	}
+
+	public void doSomething(String str) {
+		System.out.println("class method MainClass : " + str);
+	}
+}
+
+public class ChildClass extends net {
+
+	// @Override
+	public void doSomething(String str) {
+		System.out.println("Call in the derived class : " + str);
+	}
+
+}
+
+class method MainClass : have redefine
+
+--------------------------------------------------------
+
+If we replace the access modifier to the "private", it will be printed to the console
+
+public class net {
+	public static void main(String[] args) {
+		net myText = new ChildClass();
+		myText.doSomething("have redefine");
+	}
+
+	private void doSomething(String str) {
+		System.out.println("class method MainClass : " + str);
+	}
+}
+
+public class ChildClass extends net {
+
+	// @Override
+	private void doSomething(String str) {
+		System.out.println("Call in the derived class : " + str);
+	}
+
+}
+
+class method MainClass : have redefine
+
+---------------------------------------------------------
+
+If nasledovannm class method will replace a different name, it will be printed to the console
+
+public class net {
+	public static void main(String[] args) {
+		net myText = new ChildClass();
+		myText.doSomething("have redefine");
+	}
+
+	static void doSomething(String str) {
+		System.out.println("class method MainClass : " + str);
+	}
+}
+
+public class ChildClass extends net {
+
+	// @Override
+	static void doSomething1(String str) {
+		System.out.println("Call in the derived class: " + str);
+	}
+
+}
+
+class method MainClass : have redefine
+
+-----------------------------------------------------------
+
+If you change the return type to String, then the system will ask to return to the "String" and the console will indicate
+
+package home;
+
+public class net {
+	public static void main(String[] args) {
+		net myText = new ChildClass();
+		myText.doSomething("have redefine");
+	}
+
+	static void doSomething(String str) {
+		System.out.println("class method MainClass : " + str);
+	}
+}
+
+	// @Override
+	static void doSomething1(String str) {
+		System.out.println("Call in the derived class : " + str);
+	}
+
+}
+
+class method MainClass : have redefine
