@@ -12,7 +12,7 @@ public class TaskModulLastFile {
 		try {
 			TransformerFactory tf = TransformerFactory.newInstance();
 			Transformer transformer = tf.newTransformer(new StreamSource("src/TaskModulTwo/TaskModulLastFile.xsl"));
-			transformer.transform(new StreamSource("src/TaskModulTwo/TaskModulTwoFile.xml"), new StreamResult("new_TaskModulLastFile.html"));
+			transformer.transform(new StreamSource("src/TaskModulTwo/TaskModulTwoFile.xml"), new StreamResult("src/TaskModulTwo/new_TaskModulLastFile.html"));
 			System.out.println("Transform " + " complete");
 		} catch (TransformerException e) {
 			System.err.println("Impossible transform file " + " : " + e);
