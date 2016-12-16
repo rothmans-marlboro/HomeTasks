@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="galery">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="flower" maxOccurs="3">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string" />
+							<xs:element name="soil">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="grunt" />
+										<xs:enumeration value="podsol" />
+										<xs:enumeration value="sod-podzol" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="origin" type="xs:string" />
+							<xs:element name="visualParametrs">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="colour" type="xs:string" />
+										<xs:element name="length" type="xs:integer" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="growingTips">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="temperature" type="xs:integer" />
+										<xs:element name="watering" type="xs:integer" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="multiplying">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="cuttings" />
+										<xs:enumeration value="seed" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

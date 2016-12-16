@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<galery>
+	<flower>
+		<name>rose</name>
+		<soil>podsol</soil>
+		<origin>holland</origin>
+		<visualParametrs>
+			<colour>red</colour>
+			<length>300</length>
+		</visualParametrs>
+		<growingTips>
+			<temperature>25</temperature>
+			<watering>200</watering>
+		</growingTips>
+		<multiplying>cuttings</multiplying>
+	</flower>
+	<flower>
+		<name>violet</name>
+		<soil>grunt</soil>
+		<origin>russia</origin>
+		<visualParametrs>
+			<colour>blue</colour>
+			<length>10</length>
+		</visualParametrs>
+		<growingTips>
+			<temperature>20</temperature>
+			<watering>100</watering>
+		</growingTips>
+		<multiplying>seed</multiplying>
+	</flower>
+</galery>
