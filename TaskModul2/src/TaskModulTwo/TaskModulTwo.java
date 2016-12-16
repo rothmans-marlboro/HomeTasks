@@ -61,15 +61,15 @@ public class TaskModulTwo {
 						System.out.println();
 						isColour = false;
 					} else if (isLength) {
-						System.out.print("Length: " + reader.getText());
+						System.out.print("Length: " + reader.getText()+"sm");
 						System.out.println();
 						isLength = false;
 					} else if (isTemperature) {
-						System.out.print("Temperature: " + reader.getText());
+						System.out.print("Temperature: " + reader.getText()+"C");
 						System.out.println();
 						isTemperature = false;
 					} else if (isWatering) {
-						System.out.print("Watering: " + reader.getText());
+						System.out.print("Watering: " + reader.getText()+"ml");
 						System.out.println();
 						isWatering = false;
 					} else if (isMultiplying) {
