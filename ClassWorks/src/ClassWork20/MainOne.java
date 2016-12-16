@@ -18,7 +18,7 @@ public class MainOne {
 		String unit = null;
 		XMLInputFactory factory = XMLInputFactory.newFactory();
 		try {
-			XMLStreamReader reader = factory.createXMLStreamReader(new FileInputStream("pointList.xml"));
+			XMLStreamReader reader = factory.createXMLStreamReader(new FileInputStream("src/ClassWork20/pointList.xml"));
 			System.out.println("pointList");
 			while (reader.hasNext()) {
 				int res = reader.next();
