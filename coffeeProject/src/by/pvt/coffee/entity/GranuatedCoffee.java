@@ -7,7 +7,7 @@ public class GranuatedCoffee extends CoffeeInstant {
      */
     private static final long serialVersionUID = 1L;
 
-	protected int diameter;
+	private int diameter;
 
 	public GranuatedCoffee(String name, int price, int weight, Taste taste, int dissolutionTime, int diameter) {
 		super(name, price, weight, taste, dissolutionTime);
@@ -48,7 +48,7 @@ public class GranuatedCoffee extends CoffeeInstant {
 	public String toString() {
 		return "GranuatedCoffee [name=" + getName()
 				+ ", price=" + getPrice() + ", weight=" + getWeight() + 
-				", taste=" + getTaste() + ", diameter=" + diameter + ", dissolutionTime=" + dissolutionTime + "]";
+				", taste=" + getTaste() + ", diameter=" + diameter + ", dissolutionTime=" + getDissolutionTime() + "]";
 	}
 
 }

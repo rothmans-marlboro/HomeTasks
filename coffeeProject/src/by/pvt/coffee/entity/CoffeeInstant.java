@@ -7,7 +7,7 @@ public class CoffeeInstant extends Coffee {
      */
     private static final long serialVersionUID = 1L;
 
-	protected int dissolutionTime;
+	private int dissolutionTime;
 
 	public CoffeeInstant(String name, int price, int weight, Taste taste, int dissolutionTime) {
 		super(name, price, weight, taste);

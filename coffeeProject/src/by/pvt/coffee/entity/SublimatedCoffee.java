@@ -7,7 +7,7 @@ public class SublimatedCoffee extends CoffeeInstant {
      */
     private static final long serialVersionUID = 1L;
 
-	protected int time;
+	private int time;
 
 	public SublimatedCoffee(String name, int price, int weight, Taste taste, int dissolutionTime, int time) {
 		super(name, price, weight, taste, dissolutionTime);
@@ -48,6 +48,6 @@ public class SublimatedCoffee extends CoffeeInstant {
 	public String toString() {
 		return "SublimatedCoffee [name=" + getName()
 				+ ", price=" + getPrice() + ", weight=" + getWeight() + ", taste="
-				+ getTaste() + ", time=" + time + ", dissolutionTime=" + dissolutionTime + "]";
+				+ getTaste() + ", time=" + time + ", dissolutionTime=" + getDissolutionTime() + "]";
 	}
 }

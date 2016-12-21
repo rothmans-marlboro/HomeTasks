@@ -7,7 +7,7 @@ public class GroundCoffee extends CoffeeInsolub {
      */
     private static final long serialVersionUID = 1L;
 
-	protected int timeTurk;
+	private int timeTurk;
 
 	public GroundCoffee(String name, int price, int weight, Taste taste, String country, int timeTurk) {
 		super(name, price, weight, taste, country);
@@ -48,7 +48,7 @@ public class GroundCoffee extends CoffeeInsolub {
 	public String toString() {
 		return "GroundCoffee [name=" + getName() + ", price=" + getPrice()
 				+ ", weight=" + getWeight() + ", taste=" + getTaste() +
-				", timeTurk=" + timeTurk + ", country=" + country +"]";
+				", timeTurk=" + timeTurk + ", country=" + getCountry() +"]";
 	}
 
 }

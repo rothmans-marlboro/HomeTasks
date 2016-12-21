@@ -7,7 +7,7 @@ public class CoffeeInsolub extends Coffee {
      */
     private static final long serialVersionUID = 1L;
 
-	protected String country;
+	private String country;
 
 	public CoffeeInsolub(String name, int price, int weight, Taste taste, String country) {
 		super(name, price, weight, taste);

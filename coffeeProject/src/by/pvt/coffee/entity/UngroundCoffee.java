@@ -7,7 +7,7 @@ public class UngroundCoffee extends CoffeeInsolub {
      */
     private static final long serialVersionUID = 1L;
 
-	protected int diameterTurk;
+	private int diameterTurk;
 
 	public UngroundCoffee(String name, int price, int weight, Taste taste, String country, int diameterTurk) {
 		super(name, price, weight, taste, country);
@@ -48,7 +48,7 @@ public class UngroundCoffee extends CoffeeInsolub {
 	public String toString() {
 		return "UngroundCoffee [name=" + getName() + ", price="
 				+ getPrice() + ", weight=" + getWeight() + ", taste=" + getTaste() 
-				+ ", diameterTurk=" + diameterTurk + ", country=" + country + "]";
+				+ ", diameterTurk=" + diameterTurk + ", country=" + getCountry() + "]";
 	}
 
 }
