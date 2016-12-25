@@ -55,12 +55,9 @@ public class Main {
 		System.out.println(df.format(currentDate));
 		System.out.println(tf.format(currentDate));
 		
-		System.out.println(rb.getString("clue1"));
-		System.out.println(rb.getString("clue2"));
-		System.out.println(rb.getString("clue3"));
-		System.out.println(rb.getString("clue4"));
-		System.out.println(rb.getString("clue5"));
-		System.out.println(rb.getString("clue6"));
+		for (int i=1; i<=6; i++){
+			System.out.println(rb.getString("clue"+i));
+		}
 
 		boolean isStart = true;
 		while (isStart){ // create cycle
@@ -140,13 +137,10 @@ public class Main {
                     rb = ResourceBundle.getBundle(FILENAME, locEN);
                 } else {
                     rb = ResourceBundle.getBundle(FILENAME, locRU);
-                }
-				System.out.println(rb.getString("clue1"));
-				System.out.println(rb.getString("clue2"));
-				System.out.println(rb.getString("clue3"));
-				System.out.println(rb.getString("clue4"));
-				System.out.println(rb.getString("clue5"));
-				System.out.println(rb.getString("clue6"));
+                }			
+				for (int i=1; i<=6; i++){
+					System.out.println(rb.getString("clue"+i));
+				}
 				break;
 			case 6:// we want to exit
 				System.out.println(rb.getString("clue15"));
