@@ -45,17 +45,10 @@ public class Main {
 		UngroundCoffee coffeeTen = new UngroundCoffee("Qesito", 23, 350, Taste.USUAL, "Colombia", 8);
 
 		List<Coffee> coffeeList = new ArrayList<>();// create "coffeeList"
-		coffeeList.add(coffeeOne); // add arrays to "coffeeList"
-		coffeeList.add(coffeeTwo);
-		coffeeList.add(coffeeThree);
-		coffeeList.add(coffeeFour);
-		coffeeList.add(coffeeFive);
-		coffeeList.add(coffeeSix);
-		coffeeList.add(coffeeSeven);
-		coffeeList.add(coffeeEigth);
-		coffeeList.add(coffeeNine);
-		coffeeList.add(coffeeTen);
-
+		// add arrays to "coffeeList"
+		Collections.addAll(coffeeList, coffeeOne, coffeeTwo, coffeeThree, coffeeFour, coffeeFive, coffeeSix, coffeeSeven,
+				coffeeEigth, coffeeNine, coffeeTen);
+	
 		Date currentDate = new Date();
 		DateFormat df = DateFormat.getDateInstance(DateFormat.FULL,locEN);
 		DateFormat tf = DateFormat.getTimeInstance(DateFormat.FULL,locEN);
@@ -76,16 +69,8 @@ public class Main {
 			switch (enteredValue) {
 			case 1: // we want to see the <List>
 				coffeeList.clear(); // clear the List to show base List
-				coffeeList.add(coffeeOne);
-				coffeeList.add(coffeeTwo);
-				coffeeList.add(coffeeThree);
-				coffeeList.add(coffeeFour);
-				coffeeList.add(coffeeFive);
-				coffeeList.add(coffeeSix);
-				coffeeList.add(coffeeSeven);
-				coffeeList.add(coffeeEigth);
-				coffeeList.add(coffeeNine);
-				coffeeList.add(coffeeTen);
+				Collections.addAll(coffeeList, coffeeOne, coffeeTwo, coffeeThree, coffeeFour, coffeeFive, coffeeSix, coffeeSeven,
+						coffeeEigth, coffeeNine, coffeeTen);
 				System.out.println(rb.getString("clue7"));
 				for (Coffee coffee : coffeeList) {
 					System.out.println(coffee);
