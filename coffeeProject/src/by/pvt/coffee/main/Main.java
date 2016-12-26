@@ -9,7 +9,6 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -44,7 +43,7 @@ public class Main {
 		UngroundCoffee coffeeNine = new UngroundCoffee("President", 24, 350, Taste.USUAL, "Ethiopia", 7);
 		UngroundCoffee coffeeTen = new UngroundCoffee("Qesito", 23, 350, Taste.USUAL, "Colombia", 8);
 
-		List<Coffee> coffeeList = new ArrayList<>();// create "coffeeList"
+		ArrayList<Coffee> coffeeList = new ArrayList<>();// create "coffeeList"
 		// add arrays to "coffeeList"
 		Collections.addAll(coffeeList, coffeeOne, coffeeTwo, coffeeThree, coffeeFour, coffeeFive, coffeeSix, coffeeSeven,
 				coffeeEigth, coffeeNine, coffeeTen);
@@ -90,7 +89,7 @@ public class Main {
 				int maxPrice = litera.nextInt();
 				System.out.println(rb.getString("clue11") + minPrice + " " + rb.getString("clue12") + maxPrice + ":");
 
-				List<Coffee> coffeeWithPriceList = new ArrayList<>();
+				ArrayList<Coffee> coffeeWithPriceList = new ArrayList<>();
 				for (Coffee coffee : coffeeList) { // condition corresponding to given range
 					if (minPrice <= coffee.getPrice() && maxPrice >= coffee.getPrice()) {
 						coffeeWithPriceList.add(coffee);
